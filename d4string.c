@@ -3,6 +3,16 @@
 #include <string.h>
 #include <stdlib.h>
 
+long unsigned int d4length(const char *source) {
+    long unsigned int result = 0;
+    int i = 0;
+    while (source[i] != '\0') {
+        result++;
+        i++;
+    }
+    return result;
+}
+
 char *d4concatenate(const char *destination, const char *source) {
     long unsigned int destinationLength = strlen(destination);
     long unsigned int sourceLength = strlen(source);
