@@ -14,8 +14,8 @@ long unsigned int d4length(const char *source) {
 }
 
 char *d4concatenate(const char *destination, const char *source) {
-    long unsigned int destinationLength = strlen(destination);
-    long unsigned int sourceLength = strlen(source);
+    long unsigned int destinationLength = d4length(destination);
+    long unsigned int sourceLength = d4length(source);
     long unsigned int totalLength = destinationLength + sourceLength + 1;
 
     char *result = (char *)malloc(totalLength * sizeof(char));
