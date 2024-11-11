@@ -15,6 +15,9 @@ int main() {
     printf("%s\n", d4nconcatenate(string, source, 3));
 
     // return the first appearance of a character in the string
-    printf("%s\n", d4strcharacter(source, 'r'));
+    printf("%s\n", d4strcharacter(source, 'n'));
+
+    // return the pointer of the first appearance of a character in the string
+    printf("%s\n", d4strcharacterptr(source, 'r'));
     return 0;
 }
