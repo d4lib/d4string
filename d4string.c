@@ -53,3 +53,26 @@ char *d4nconcatenate(const char *destination, char *source, long unsigned int si
     result[totalLength - 1] = '\0';
     return result;
 }
+
+char *d4strcharacter(const char *destination, char character) {
+    long unsigned int destinationLength = d4length(destination);
+    
+    char *result = (char *)malloc((d4length(destination) + 1));
+    long unsigned int counter = 0;
+    for (long unsigned int i = 0; i < destinationLength; i++) {
+        if (destination[i] == character) {
+            break;
+        }
+        counter++;
+    }
+    
+    int i = 0;
+
+    while (counter < destinationLength) {
+        result[i] = destination[counter];
+        i++;
+        counter++;
+    }
+
+    return result;
+}
