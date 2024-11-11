@@ -11,7 +11,10 @@ int main() {
     // concatenate two strings
     printf("%s\n", d4concatenate(string, source));
 
-    // concatenate two strings with the paramater n
+    // concatenate two strings with no more than the paramater n
     printf("%s\n", d4nconcatenate(string, source, 3));
+
+    // return the first appearance of a character in the string
+    printf("%s\n", d4strcharacter(source, 'r'));
     return 0;
 }
