@@ -3,9 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-typedef long unsigned int d4size_t;
-
-long unsigned int d4length(const char *source) {
+d4size_t d4length(const char *source) {
     d4size_t result = 0;
     int i = 0;
     while (source[i] != '\0') {
@@ -33,7 +31,7 @@ char *d4concatenate(const char *destination, const char *source) {
     return result;
 }
 
-char *d4nconcatenate(const char *destination, char *source, long unsigned int size) {
+char *d4nconcatenate(const char *destination, char *source, d4size_t size) {
     char *copySource = (char *)malloc((d4length(source) + 1) * sizeof(char));
     strcpy(copySource , source);
 
@@ -77,4 +75,13 @@ char *d4strcharacter(const char *destination, char character) {
     }
 
     return result;
+}
+
+char *d4strcharacterptr(const char *destination, char character) {
+    for (const char *ptr = destination; *ptr != '\0'; ++ptr) {
+        if (*ptr == character) {
+            return (char *)ptr;
+        }
+    }
+    return D4NULL;
 }
