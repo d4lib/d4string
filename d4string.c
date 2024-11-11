@@ -3,8 +3,10 @@
 #include <string.h>
 #include <stdlib.h>
 
+typedef long unsigned int d4size_t;
+
 long unsigned int d4length(const char *source) {
-    long unsigned int result = 0;
+    d4size_t result = 0;
     int i = 0;
     while (source[i] != '\0') {
         result++;
@@ -14,16 +16,16 @@ long unsigned int d4length(const char *source) {
 }
 
 char *d4concatenate(const char *destination, const char *source) {
-    long unsigned int destinationLength = d4length(destination);
-    long unsigned int sourceLength = d4length(source);
-    long unsigned int totalLength = destinationLength + sourceLength + 1;
+    d4size_t destinationLength = d4length(destination);
+    d4size_t sourceLength = d4length(source);
+    d4size_t totalLength = destinationLength + sourceLength + 1;
 
     char *result = (char *)malloc(totalLength * sizeof(char));
 
-    for (long unsigned int i = 0; i < destinationLength; i++)
+    for (d4size_t i = 0; i < destinationLength; i++)
         result[i] = destination[i];
 
-    for (long unsigned int i = 0; i < sourceLength; i++)
+    for (d4size_t i = 0; i < sourceLength; i++)
         result[destinationLength + i] = source[i];
 
     result[totalLength - 1] = '\0';
@@ -35,18 +37,18 @@ char *d4nconcatenate(const char *destination, char *source, long unsigned int si
     char *copySource = (char *)malloc((d4length(source) + 1) * sizeof(char));
     strcpy(copySource , source);
 
-    long unsigned int sourceLength = d4length(copySource) + 1;
+    d4size_t sourceLength = d4length(copySource) + 1;
     copySource[size + 1] = '\0';
 
-    long unsigned int destinationLength = d4length(destination);
-    long unsigned int totalLength = destinationLength + sourceLength + 1;
+    d4size_t destinationLength = d4length(destination);
+    d4size_t totalLength = destinationLength + sourceLength + 1;
     char *result = (char *)malloc(totalLength * sizeof(char));
 
-    for (long unsigned int i = 0; i < destinationLength; i++) {
+    for (d4size_t i = 0; i < destinationLength; i++) {
         result[i] = destination[i];
     }
 
-    for (long unsigned int i = 0; i < sourceLength; i++) {
+    for (d4size_t i = 0; i < sourceLength; i++) {
         result[destinationLength + i] = copySource[i];
     }
 
@@ -55,11 +57,11 @@ char *d4nconcatenate(const char *destination, char *source, long unsigned int si
 }
 
 char *d4strcharacter(const char *destination, char character) {
-    long unsigned int destinationLength = d4length(destination);
+    d4size_t destinationLength = d4length(destination);
     
     char *result = (char *)malloc((d4length(destination) + 1));
-    long unsigned int counter = 0;
-    for (long unsigned int i = 0; i < destinationLength; i++) {
+    d4size_t counter = 0;
+    for (d4size_t i = 0; i < destinationLength; i++) {
         if (destination[i] == character) {
             break;
         }
