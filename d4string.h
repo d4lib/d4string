@@ -9,5 +9,6 @@ extern char *d4concatenate(const char *destination, const char *source);
 extern char *d4nconcatenate(const char *destination, char *source, d4size_t size);
 extern char *d4strcharacter(const char *destination, char character);
 extern char *d4strcharacterptr(const char *destination, char character);
+extern char *d4strrcharacterptr(const char *destination, char character);
 
 #endif

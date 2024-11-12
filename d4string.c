@@ -85,3 +85,15 @@ char *d4strcharacterptr(const char *destination, char character) {
     }
     return D4NULL;
 }
+
+char *d4strrcharacterptr(const char *destination, char character) {
+    const char *result = D4NULL;
+
+    for (const char *ptr = destination; *ptr != '\0'; ++ptr) {
+        if (*ptr == character) {
+            result = ptr;
+        }
+    }
+
+    return (char *)result;
+}
