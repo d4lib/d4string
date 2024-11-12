@@ -19,5 +19,8 @@ int main() {
 
     // return the pointer of the first appearance of a character in the string
     printf("%s\n", d4strcharacterptr(source, 'r'));
+
+    // return the pointer of the last appearance of a character in the string
+    printf("%s\n", d4strrcharacterptr("Hello, world!", 'o'));
     return 0;
 }
