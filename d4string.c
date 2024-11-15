@@ -97,3 +97,7 @@ char *d4strrcharacterptr(const char *destination, char character) {
 
     return (char *)result;
 }
+
+char *d4compare(char *string1, char *string2) {
+
+}
