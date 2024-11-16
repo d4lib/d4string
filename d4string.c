@@ -98,6 +98,6 @@ char *d4strrcharacterptr(const char *destination, char character) {
     return (char *)result;
 }
 
-char *d4compare(char *string1, char *string2) {
+d4size_t *d4compare(char *string1, char *string2) {
 
 }
