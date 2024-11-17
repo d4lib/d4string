@@ -22,5 +22,8 @@ int main() {
 
     // return the pointer of the last appearance of a character in the string
     printf("%s\n", d4strrcharacterptr("Hello, world!", 'o'));
+
+    // compare two strings
+    printf("%ld\n", d4compare("danin", "dani"));
     return 0;
 }
