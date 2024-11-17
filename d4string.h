@@ -10,6 +10,6 @@ extern char *d4nconcatenate(const char *destination, char *source, d4size_t size
 extern char *d4strcharacter(const char *destination, char character);
 extern char *d4strcharacterptr(const char *destination, char character);
 extern char *d4strrcharacterptr(const char *destination, char character);
-extern d4size_t *d4compare(char *string1, char *string2);
+extern d4size_t d4compare(char *string1, char *string2);
 
 #endif

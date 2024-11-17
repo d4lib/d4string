@@ -98,6 +98,19 @@ char *d4strrcharacterptr(const char *destination, char character) {
     return (char *)result;
 }
 
-d4size_t *d4compare(char *string1, char *string2) {
+d4size_t d4compare(char *string1, char *string2) {
+    while (*string1 && *string2) {
+        if (*string1 != *string2) {
+            if (*string1 > *string2)
+                return (d4size_t)1;
+            else return (d4size_t)-1;
+        }
+        string1++;
+        string2++;
+    }
 
+    if (*string1 == *string2)
+        return D4NULL;
+    
+    return (*string1) ? (d4size_t)1 : (d4size_t)-1;
 }
